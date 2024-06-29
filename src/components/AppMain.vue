@@ -11,14 +11,25 @@ export default {
 
     created(){
         axios.get('http://127.0.0.1:8000/api/projects').then((resp)=>{
-            console.log(resp);
+            this.projects = resp.data.results;
         });
     }
 }
 </script>
 
 <template>
-<h1>ciao mondo </h1>
+<h1 class="text-center mb-5">I miei progetti</h1>
+<div class="container">
+    <div class="row g-3">
+        <div class="col-4" v-for="project in projects">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{project.title}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
 
 <style scoped>
