@@ -25,6 +25,7 @@ export default {
             <div class="card">
                 <div class="card-body">
                     <h5>{{project.title}}</h5>
+                    <p>{{ project.content }}</p>
                 </div>
             </div>
         </div>
